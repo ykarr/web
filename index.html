@@ -17,10 +17,26 @@
         list-style-type: disc;
       }
     </style>
+    <script>
+  		function action_qrcode() {
+  			qr_img.src = document.all.qr_base.value + document.all.qr_add.value;
+  		}
+  	</script>
   </head>
   <body>
     <p><input type="checkbox" onclick="alert('안녕하세요. 게으른 주인장입니다.')">단순한 체크박스</p>
     <a href="https://intunknown.tistory.com/" target="_blank" title="게으른 주인장"><h1>web</h1></a>
+
+		<div align="center">
+    	<input name="qr_base" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
+    	QR코드 생성기 : <input name="qr_add" type="text" style="width:400px;" value="https://intunknown.tistory.com/">
+    	<input type="button" value="생성" onclick="action_qrcode()">
+    	<br/>
+    	<br/>
+    	<img name="qr_img">
+			<br/>
+    	<br/>
+    </div>
 
     <iframe src="https://it.jbnu.ac.kr/itjbnu/2016/inner.php?sMenu=G1000&amp;pno=1" width="70%" height="500"></iframe>
     <p>본문<br><img src="사진2.png"></p>
@@ -36,13 +52,10 @@
     	<script type="text/javascript">
        (function(d, s) {
            var j, e = d.getElementsByTagName(s)[0];
-
            if (typeof LivereTower === 'function') { return; }
-
            j = d.createElement(s);
            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
            j.async = true;
-
            e.parentNode.insertBefore(j, e);
        })(document, 'script');
     	</script>
