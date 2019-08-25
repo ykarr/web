@@ -7,53 +7,61 @@
       body{
         text-align: center;
       }
+      td{
+        border-style: solid;
+      }
     </style>
     <script>
-      var show;
       var showresult;
+      var change;
       var num=1;
       function send(data) {
-        show = document.getElementById('input');
-        input.value = show.value + data;
+        output.value = output.value + data;
       }
-      function tclear(){
-        document.getElementById('input').value="";
-        document.getElementById('output').value="";
+      function outputclear(){
+        output.value="";
+      }
+      function allclear(){
+        input.value="";
+        output.value="";
       }
       function result(){
-        show =  document.getElementById('input');
-        showresult = eval(show.value);
+        input.value=input.value+output.value;
+        showresult = eval(input.value);
         //eval() 문자열을 코드로 인식하게 해줌
-        document.getElementById('list').value+=num+"번째 계산식"+input.value+"\n";
-        document.getElementById('input').value="";
-        document.getElementById('output').value=showresult;
-        document.getElementById('list').value+=num+"번째 결과"+showresult+"\n";
+        list.value+=num+"번째 계산식"+input.value+"\n";
+        input.value="";
+        output.value=showresult;
+        list.value+=num+"번째 결과"+showresult+"\n";
         num++;
       }
       function square(){
-        show =  document.getElementById('input');
-        showresult = Math.pow(show.value,2);
+        showresult = Math.pow(output.value,2);
         //eval() 문자열을 코드로 인식하게 해줌
-        document.getElementById('input').value="";
-        document.getElementById('output').value=showresult;
+        input.value="";
+        output.value=showresult;
       }
       /*+-수정이 필요함*/
       function swap(){
-        showresult=document.getElementById('input');
-        showresult.value=-showresult.value;
+        output.value=-output.value;
       }
       function tdelete(){
-        input.value = input.value.substring(0, show.value.length-1);
+        output.value = output.value.substring(0, output.value.length-1);
       }
       /*하아..루트 수정필요*/
       function sqrt() {
         input.value = Math.sqrt(input.value);
       }
       function sign(data){
-        show = document.getElementById('input');
-        input.value = show.value + data;
+        input.value = input.value+output.value + data;
+        output.value="";
       }
-
+      function point(){
+        output.value="1/"+output.value;
+        showresult=eval(output.value);
+        input.value=input.value+showresult;
+        output.value="";
+      }
     </script>
   </head>
   <body>
@@ -68,11 +76,11 @@
         <td onclick="sign('%')">%</td>
         <td onclick="sqrt()">루트</td>
         <td onclick="square()">제곱</td>
-        <td>1/X</td>
+        <td onclick="point()">1/X</td>
       </tr>
       <tr>
-        <td onclick="tclear()">ce</td>
-        <td onclick="tclear()">c</td>
+        <td onclick="outputclear()">ce</td>
+        <td onclick="allclear()">c</td>
         <td onclick="tdelete()"><</td>
         <td onclick="sign('/')">÷</td>
       </tr>
