@@ -4,27 +4,455 @@
     <link rel="shortcut icon" href="code.ico">
     <title>타이틀입니다.</title>﻿
     <meta charset="utf-8">
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <!-- Bootstrap --><!-- -->
+    <link href="include/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Responsive --> <!-- -->
+    <link href="include/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+
+
+
+
     <!--스타일 추가-->
     <style>
-      ul{
-        width:100%;
-        height:30px;
-        background:black;
-        opacity:0.5;
-        list-style:none;
-        padding-top:15px;
+
+      /* ==================================================
+       Basic Styles
+      ================================================== */
+
+      html, body {
+      height: 100%;
       }
-      li{
-        float:left;
-        margin-right:25px;
-        margin-left:25px;
+
+      html, hmtl a{
+      width:100%;
+      font-size: 100%;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
       }
+
+      body{
+      background:#2F3238;
+      color:#7F8289;
+      font-weight:300;
+      font-size:16px;
+      font-family: 'Titillium Web', sans-serif;
+      line-height:28px;
+      }
+
+
       a{
-        font-size:100%;
-        color:white;
-        font-weight:bold;
-        text-decoration:none
+      color:#DE5E60;
+      text-decoration: none;
+      cursor: pointer;
+
+      -webkit-transition: color 0.1s linear 0s;
+         -moz-transition: color 0.1s linear 0s;
+         -o-transition: color 0.1s linear 0s;
+            transition: color 0.1s linear 0s;
       }
+
+      a:hover,
+      a:active,
+      a:focus{
+      outline: 0;
+      color:#FFFFFF;
+      text-decoration:none;
+      }
+
+      a img {
+      border: none;
+      }
+
+      a > img {
+      vertical-align: bottom;
+      }
+
+      img {
+      max-width: none;
+      }
+
+      strong {
+        font-weight: 500;
+      }
+
+      p {
+      margin: 0 0 30px;
+      }
+
+      hr {
+      border-style: dashed;
+      border-color: #3C3F45;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+      margin: 50px 0;
+      }
+
+      .align_left{
+      float:left;
+      margin:0 25px 0 0px!important;
+      }
+
+      .align_right{
+      float:right;
+      margin:0 0 0 25px!important;
+      }
+
+      .text_align_left {
+      text-align: left;
+      }
+
+      .text_align_center {
+      text-align: center;
+      }
+
+      .text_align_right {
+      text-align: right;
+      }
+
+      .color-text {
+        color: #DE5E60;
+      }
+
+      .through{
+      text-decoration:line-through;
+      }
+
+      input, button, select, textarea {
+      font-weight: 300;
+      font-family: 'Titillium Web', sans-serif;
+      outline: 0;
+      }
+
+      input:focus,
+      textarea:focus,
+      input[type="text"]:focus {
+      outline: 0;
+      }
+
+      input:-moz-placeholder,
+      textarea:-moz-placeholder {
+      color: #7F8289;
+      }
+
+      input:-ms-input-placeholder,
+      textarea:-ms-input-placeholder {
+      color: #7F8289;
+      }
+
+      input::-webkit-input-placeholder,
+      textarea::-webkit-input-placeholder {
+      color: #7F8289;
+      }
+      /* ==================================================
+       Typography
+      ================================================== */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6{
+      margin:0 0 20px 0;
+      color:#FFFFFF;
+      font-weight:300;
+      font-family: 'Titillium Web', sans-serif;
+      line-height:1.5em;
+      }
+
+      h1{
+      font-size:48px;
+      }
+
+      h2{
+      font-size:36px;
+      }
+
+      h3{
+      font-size:24px;
+      }
+
+      h4{
+      font-size:20px;
+      }
+
+      h5{
+      font-size:18px;
+      }
+
+      h6{
+      font-size:16px;
+      }
+
+      h3.spec {
+      color: #FFFFFF;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+      }
+      /* =======================================
+       Header
+      =========================================*/
+      header {
+      width: 100%;
+      z-index: 99;
+      }
+
+      header .sticky-nav {
+      position: relative;
+      width: 100%;
+      height: 60px;
+      background: #26292E;
+      z-index: 1001;
+
+      -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      header .sticky-nav.stuck {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1001;
+      }
+
+      header #logo {
+      color: #FFFFFF;
+      float: left;
+      padding: 15px 0;
+      margin-left: 20px;
+      }
+
+      header #logo a {
+      background: url(include/img/work/logo.png) no-repeat;
+      width: 100px;
+      height: 30px;
+      text-indent: -9999px;
+      display: block;
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /*
+      -webkit-transition: opacity 0.25s ease-in-out 0s;
+         -moz-transition: opacity 0.25s ease-in-out 0s;
+         -o-transition: opacity 0.25s ease-in-out 0s;
+            transition: opacity 0.25s ease-in-out 0s;*/
+      }
+
+      header #logo a:hover {
+      opacity: 0.65;
+      filter: alpha(opacity=65);
+      }
+
+      nav#menu {
+      float: right;
+      margin-right: 20px;
+      }
+
+      nav#menu #menu-nav {
+      margin: 0;
+      padding: 0;
+      }
+
+      nav#menu #menu-nav li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 50px;
+      }
+
+      nav#menu #menu-nav li:first-child {
+      margin-left: 0;
+      }
+
+      nav#menu #menu-nav li a {
+      font-family: 'Black Han Sans', sans-serif;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 60px;
+      display: block;
+      text-transform: uppercase;
+
+      }
+
+      nav#menu #menu-nav li.current a,
+      nav#menu #menu-nav li a:hover {
+      color: #DE5E60;
+      }
+      /* ==================================================
+       Section Page
+      ================================================== */
+
+      .page {
+      background: #2F3238;
+      padding: 100px 0;
+      position: relative;
+      z-index: 99;
+      }
+
+      .page-alternate {
+      background: #26292E;
+      padding: 100px 0;
+      position: relative;
+      z-index: 99;
+      }
+
+      .title-page {
+      text-align: center;
+      margin-bottom: 100px;
+      }
+
+      .title-page .title {
+      font-size: 48px;
+      margin: 0 0 10px 0
+      }
+
+      .title-page .title-description {
+      font-size: 24px;
+      font-weight: 200;
+      margin: 0;
+      }
+      /* ==================================================
+       Section Portfolio
+      ================================================== */
+
+      .type-work {
+      color: #FFFFFF;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      line-height: 1em;
+      text-transform: uppercase;
+      }
+
+      .work-nav #filters {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      }
+
+      .work-nav #filters li {
+      margin: 0 0 30px 0;
+      padding: 0;
+      }
+
+      .work-nav #filters li a {
+      color: #7F8289;
+      font-size: 16px;
+      display: block;
+      }
+
+      .work-nav #filters li a:hover {
+      color: #FFFFFF;
+      }
+
+      .work-nav #filters li a.selected {
+      color: #DE5E60;
+      }
+      #thumbs {
+      margin: 0;
+      padding: 0;
+      }
+
+      #thumbs li {
+      list-style-type: none;
+      }
+
+      .item-thumbs {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      cursor: pointer;
+      }
+
+      .item-thumbs a + img {
+      width: 100%;
+      }
+
+      .item-thumbs .hover-wrap {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      opacity: 0;
+      filter: alpha(opacity=0);
+
+      -webkit-transition: all 450ms ease-out 0s;
+         -moz-transition: all 450ms ease-out 0s;
+         -o-transition: all 450ms ease-out 0s;
+            transition: all 450ms ease-out 0s;
+
+      -webkit-transform: rotateY(180deg) scale(0.5,0.5);
+         -moz-transform: rotateY(180deg) scale(0.5,0.5);
+        -ms-transform: rotateY(180deg) scale(0.5,0.5);
+         -o-transform: rotateY(180deg) scale(0.5,0.5);
+          transform: rotateY(180deg) scale(0.5,0.5);
+      }
+
+      .item-thumbs:hover .hover-wrap,
+      .item-thumbs.active .hover-wrap {
+      opacity: 1;
+      filter: alpha(opacity=100);
+
+      -webkit-transform: rotateY(0deg) scale(1,1);
+         -moz-transform: rotateY(0deg) scale(1,1);
+        -ms-transform: rotateY(0deg) scale(1,1);
+         -o-transform: rotateY(0deg) scale(1,1);
+            transform: rotateY(0deg) scale(1,1);
+      }
+
+      .item-thumbs .hover-wrap .overlay-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #DE5E60;
+
+      opacity: 0.80;
+      filter: alpha(opacity=80);
+      }
+
+      .item-thumbs .hover-wrap .overlay-img-thumb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -16px 0 0 -16px;
+      color: #FFFFFF;
+      font-size: 32px;
+      line-height: 1em;
+
+      opacity: 1;
+      filter: alpha(opacity=100);
+      }
+      /* ==================================================
+       Footer
+      ================================================== */
+
+      footer {
+      position: relative;
+      width: 100%;
+      height: auto;
+      background: #26292E;
+      text-align: center;
+      z-index: 99;
+      }
+
+      footer .credits {
+      color: #FFFFFF;
+      font-size: 13px;
+      margin-bottom: 0;
+      padding: 20px 0;
+      text-transform: uppercase;
+      }
+
     </style>
     <script type="text/javascript">
       //댓글 자바스크립트
@@ -39,22 +467,234 @@
     </script>
   </head>
   <body>
-    <ul id="toplink">
-      <li><a href="https://intunknown.tistory.com/" target="_blank" title="게으른 주인장">블로그 바로가기</a></li>
-      <li><a href="https://ykarr.github.io/web/fm.html" target="_blank" title="게으른 주인장">iframe</a></li>
-      <li><a href="https://ykarr.github.io/web/etc.html" target="_blank" title="게으른 주인장">QR코드</a></li>
-      <li><a href="https://ykarr.github.io/web/calc.html" target="_blank" title="게으른 주인장">계산기</a></li>
-    </ul>
-    <br>
-    <p><input type="checkbox" onclick="alert('안녕하세요. 게으른 주인장입니다.')">단순한 체크박스</p>
-    <p>본문<br><img src="사진2.png"></p>
+    <!--header-->
+    <header>
+      <div class="sticky-nav">
+        <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        <div id="logo">
+        	<a id="goUp" href="#home-slider" title="home">카르</a>
+        </div>
+        <nav id="menu">
+          <ul id="menu-nav">
+            <li><a href="https://intunknown.tistory.com/" target="_blank" title="게으른 주인장">블로그 바로가기</a></li>
+            <li><a href="https://ykarr.github.io/web/fm.html" target="_blank" title="게으른 주인장">iframe</a></li>
+            <li><a href="https://ykarr.github.io/web/etc.html" target="_blank" title="게으른 주인장">QR코드</a></li>
+            <li><a href="https://ykarr.github.io/web/calc.html" target="_blank" title="게으른 주인장">계산기</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!--header end-->
+    <!-- Our Work Section -->
+    <div id="work" class="page">
+      <div class="container">
+          <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page">
+                        <h2 class="title">Projects & My Website</h2>
+                        <h3 class="title-description">Check Out My Projects and Website <a href="#">GO</a>.</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- End Title Page -->
 
-    <!--댓글-->
-    <p>그냥 신기해서 넣은 댓글</p>
+            <!-- web Projects -->
+            <div class="row">
+              <div class="span3">
+                  <!-- Filter -->
+                    <nav id="options" class="work-nav">
+                        <ul id="filters" class="option-set" data-option-key="filter">
+                          <li class="type-work">Type of Work</li>
+                            <li><a href="#filter" data-option-value="*" class="selected">All</a></li>
+                            <li><a href="#filter" data-option-value=".projects">projects</a></li>
+                            <li><a href="#filter" data-option-value=".Website">Website</a></li>
+                            <li><a href="#filter" data-option-value=".Study">Study</a></li>
+                            <li><a href="#filter" data-option-value=".Etc">Etc</a></li>
+                        </ul>
+                    </nav>
+                    <!-- End Filter -->
+                </div>
+
+
+                <div class="span9">
+                  <div class="row">
+                      <section id="projects">
+                          <ul id="thumbs">
+
+                  <!-- 자바 시계만들기 -->
+                              <li class="item-thumbs span3 projects">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="https://intunknown.tistory.com/354">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/javaclock.png" alt="자바를 배우면서 swing으로 만든 시계">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- 해킹 -->
+                              <li class="item-thumbs span3 Study">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="https://intunknown.tistory.com/category/%ED%95%B4%ED%82%B9">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/hacking.png" alt="해킹에 관심이 있어서 공부중">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- window -->
+                              <li class="item-thumbs span3 Study">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="https://intunknown.tistory.com/category/%EC%9C%88%EB%8F%84%EC%9A%B0">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/window.png" alt="윈도우에 관심이 있어서 이것저것 검색해서 알아봄.">
+                              <!-- End Item Project -->
+
+                  <!-- 코드클럽 -->
+                              <li class="item-thumbs span3 Etc">
+                                  <!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
+                                  <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="Video Content From Vimeo" href="https://intunknown.tistory.com/373">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/codeclub.png" alt="코드클럽 활동중 일부.">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- c언어로 만든 tcp소켓 서버 -->
+                              <li class="item-thumbs span3 projects">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="https://github.com/ykarr/webserver">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/server.png" alt="c언어로 만든 tcp소켓 서버">
+                              <!-- End Item Project -->
+
+                  <!-- 루프스테이션과 서버(아직 깃허브에 업데이트 안함.) -->
+                              <li class="item-thumbs span3 projects">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="https://github.com/ykarr/loop_station">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/loof.png" alt="루프스테이션과 서버(아직 깃허브에 업데이트 안함.)">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- 티스토리 블로그 -->
+                              <li class="item-thumbs span3 Website">
+                                  <!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
+                                  <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="Video Content From Vimeo" href="https://intunknown.tistory.com/">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/tistory.png" alt="티스토리 블로그">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- 네이버 블로그 -->
+                              <li class="item-thumbs span3 Website">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="https://blog.naver.com/gain_time">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="include/img/work/thumbs/naver.png" alt="네이버 블로그">
+                                </li>
+                              <!-- End Item Project -->
+
+                  <!-- 깃허브 -->
+                              <li class="item-thumbs span3 Website">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="https://github.com/ykarr">
+                                      <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                  </a>
+                                    <!-- Thumb Image and Description -->
+                                  <img src="include/img/work/thumbs/github.png" alt="깃허브">
+                              </li>
+                              <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                              <li class="item-thumbs span3 Etc">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                  <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="include/img/work/full/image-01-full.jpg">
+                                    <span class="overlay-img"></span>
+                                    <span class="overlay-img-thumb font-icon-plus"></span>
+                                  </a>
+                                    <!-- Thumb Image and Description -->
+                                  <img src="include/img/work/thumbs/image-01.jpg" alt="">
+                              </li>
+                    <!-- End Item Project -->
+                                        <!-- Item Project and Filter Name -->
+                              <li class="item-thumbs span3 Etc">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="include/img/work/full/image-01-full.jpg">
+                                  <span class="overlay-img"></span>
+                                  <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                    <!-- Thumb Image and Description -->
+                                <img src="include/img/work/thumbs/image-01.jpg" alt="">
+                              <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                              <li class="item-thumbs span3 Etc">
+                                  <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="include/img/work/full/image-01-full.jpg">
+                                  <span class="overlay-img"></span>
+                                  <span class="overlay-img-thumb font-icon-plus"></span>
+                                </a>
+                                    <!-- Thumb Image and Description -->
+                                <img src="include/img/work/thumbs/image-01.jpg" alt="">
+                              </li>
+                      <!-- End Item Project -->
+
+                            </ul>
+                        </section>
+                  </div>
+
+            </div>
+            <!-- End Portfolio Projects -->
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+      <p class="credits">&copy;2019 게으른주인장. by <a href="https://intunknown.tistory.com" title="수정중입니다.">추향</a></p>
+    </footer>
+    <!-- End Footer -->
     <!-- 라이브리 시티 설치 코드 -->
     <div id="lv-container" data-id="city" data-uid="MTAyMC80NTc2OC8yMjI3OQ==">
     <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
     </div>
     <!-- 시티 설치 코드 끝 -->
+
+    <!-- Js -->
+    <!-- Modernizr -->
+    <script src="include/js/modernizr.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+    <script src="include/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+    <script src="include/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
+    <script src="include/js/waypoints.js"></script> <!-- WayPoints -->
+    <script src="include/js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+    <script src="include/js/jquery.isotope.js"></script> <!-- Isotope Filter -->
+    <script src="include/js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+    <script src="include/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+    <script src="include/js/jquery.tweet.js"></script> <!-- Tweet -->
+    <script src="include/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+    <script src="include/js/main.js"></script> <!-- Default JS -->
+    <!-- End Js -->
   </body>
 </html>
+<!--내가 원하는 형태로 수정중 http://themes.alessioatzeni.com/html/brushed/-->
+<!--https://fonts.google.com/?subset=korean&selection.family=Black+Han+Sans폰트적용 사이트-->
