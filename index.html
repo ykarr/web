@@ -21,38 +21,40 @@
   </head>
 
   <body style="background: black">
-    <!-- Header -->
-      <header id="header">
-        <div class="logo"><a href="index.html">clock project - <span>yunminseong</span></a></div>
-      </header>
 
-    <div class="showtime">
-      <h1 class='text'>현재시간</h1>
-      <div class="with">
-        <h1 id="clock0" >오전오후</h1>
-        <h1 id="clock1" >00:00</h1>
-      </div>
-      <p id="clock2" >년,월,일,요일</p>
-    </div>
-    <div class="buttonlist">
-      <button type="button" class="snip1535"onclick="toggleModal();">List</button>
-      <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
-      <button type="button" class="snip1535"onclick="sfullsize();">fullsize</button>
-    </div>
-    <div class="showtimes">
-      <div class="modal-content">
-          <span class="close-button" onClick='toggleModal()'>&times;</span>
-          <form action="./change.php" method="post" style="width:100%;height:90%;">
-            <input type="password" name="cpw" placeholder="바꿀 비밀번호" value="">
-            <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
-            <!--<input type="submit" name="change" id="change" tabindex="4" class="change" value="비밀번호 변경">-->
-            <h1 id="clock3" >저장된시간</h1>
-          </form>
-          <!-- 라이브리 시티 설치 코드 -->
+      <!-- Header -->
+        <header id="header">
+          <div class="logo"><a href="index.html">clock project - <span>yunminseong</span></a></div>
+        </header>
 
-          <!-- 시티 설치 코드 끝 -->
+      <div class="showtime">
+        <h1 class='text'>현재시간</h1>
+        <div class="with">
+          <h1 id="clock0" >오전오후</h1>
+          <h1 id="clock1" >00:00</h1>
+        </div>
+        <p id="clock2" >년,월,일,요일</p>
       </div>
-    </div>
+      <div class="buttonlist">
+        <button type="button" class="snip1535"onclick="toggleModal();">List</button>
+        <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
+        <button type="button" class="snip1535"onclick="sfullsize();">fullsize</button>
+      </div>
+      <div class="showtimes">
+        <div class="modal-content">
+            <span class="close-button" onClick='toggleModal()'>&times;</span>
+            <form action="./change.php" method="post" style="width:100%;height:90%;">
+              <input type="password" name="cpw" placeholder="바꿀 비밀번호" value="">
+              <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
+              <!--<input type="submit" name="change" id="change" tabindex="4" class="change" value="비밀번호 변경">-->
+              <h1 id="clock3" >저장된시간</h1>
+            </form>
+
+
+
+        </div>
+      </div>
+
 
     <!-- Footer -->
       <footer id="footer">
@@ -67,6 +69,7 @@
             </div>
         </div>
       </footer>
+
     <script src="clock.js"></script>
     <script type="text/javascript">
 
