@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="kr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>시계</title>
+    <link rel="stylesheet" href="clock.css" />
+    <style media="screen">
+      .buttonlist{
+        margin-top:2%;
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      select,
+      textarea {
+        background: rgba(144, 144, 144, 0.075);
+        border-color: rgba(144, 144, 144, 0.25);
+      }
+    </style>
+  </head>
+
+  <body style="background:black">
+    <!-- Header -->
+      <header id="header">
+        <div class="logo"><a href="index.html">clock project - <span>yunminseong</span></a></div>
+      </header>
+
+    <div class="showtime">
+      <h1 class='text'>현재시간</h1>
+      <div class="with">
+        <h1 id="clock0" >오전오후</h1>
+        <h1 id="clock1" >00:00</h1>
+      </div>
+      <p id="clock2" >년,월,일,요일</p>
+    </div>
+    <div class="buttonlist">
+      <button type="button" class="snip1535"onclick="toggleModal();">List</button>
+      <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
+      <button type="button" class="snip1535"onclick="sfullsize();">fullsize</button>
+    </div>
+    <div class="showtimes">
+      <div class="modal-content">
+          <span class="close-button" onClick='toggleModal()'>&times;</span>
+          <form action="./change.php" method="post" style="width:100%;height:90%;">
+            <input type="password" name="cpw" placeholder="바꿀 비밀번호" value="">
+            <button type="button" class="snip1535"onclick="ssstime();">시간저장</button>
+            <!--<input type="submit" name="change" id="change" tabindex="4" class="change" value="비밀번호 변경">-->
+            <h1 id="clock3" >저장된시간</h1>
+          </form>
+          <!-- 라이브리 시티 설치 코드 -->
+          <div id="lv-container" data-id="city" data-uid="MTAyMC80NTc2OC8yMjI3OQ==">
+          <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
+          </div>
+          <!-- 시티 설치 코드 끝 -->
+      </div>
+    </div>
+
+
+    <script src="clock.js"></script>
+    <script type="text/javascript">
+    /* Demo purposes only */
+
+    </script>
+
+  </body>
+</html>
