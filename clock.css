@@ -1,4 +1,5 @@
-body{
+body:full-screen{
+  color:black;
   width: 99%;
   height: 99%;
 }
