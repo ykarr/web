@@ -44,7 +44,16 @@ function ssstime(){
   clockTarget3.innerText=`${ampm}\n${hours}:${minutes}:${seconds}\n${year}년 ${month+1}월 ${clockDate}일 ${week[day]}요일`;
 }
 function sfullsize(){
-  document.documentElement.webkitRequestFullscreen();
+  if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {    // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {  // Chrome & Safari
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { //IE
+            document.documentElement.msRequestFullscreen();
+        }
+    }
 }
 function init() {
   clock();
@@ -73,4 +82,3 @@ function toggleModal() {
    $(this).removeClass("hover");
  }
  );
- 
