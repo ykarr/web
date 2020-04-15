@@ -12,16 +12,7 @@
     <!--css-->
     <link rel="stylesheet" href="css/style.css">
 
-      <!--javascript-->
-      <script>
-          var img;
-          function action_qrcode() {
-            qr_img.src= document.all.qr_base.value + document.all.qr_add.value;
-          }
-          function download() {
-            local.href=img;
-          }
-      </script>
+
   </head>
 <body>
   <!--nav-->
@@ -62,15 +53,27 @@
   </section>
 <div class="container file-upload" align="center">
   <input name="qr_base" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
-  <input name="qr_add" type="text" style="width:400px;" value="https://intunknown.tistory.com/">
+  <input name="qr_add" type="text" style="width:1200px;" value="https://intunknown.tistory.com/">
   <button class="file-upload-btn" type="button" onclick="action_qrcode()">QR코드 생성</button>
 
   <div class="image-upload-wrap">
 
-      <img style="max-width:250px; max-height:250px;width:100%; height:100%;" name="qr_img"  class="pt-5 file-upload-image" src="image/qr.png" alt="your image" />
+      <img name="qr_img" class="mt-5 pt-5 file-upload-image" src="image/qr.png" alt="your image" />
     </br>
+</br>
   </div>
 </div>
+<!--javascript-->
+<script>
+    var img;
+    function action_qrcode() {
+      qr_img.src= document.all.qr_base.value + document.all.qr_add.value;
+      aasd.href=document.all.qr_base.value + document.all.qr_add.value;
+    }
+    function download() {
+
+    }
+</script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
