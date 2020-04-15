@@ -51,14 +51,21 @@
       <a href="https://intunknown.tistory.com/" class="blog-link">느긋한 주인장</a>
     </div>
   </section>
+  <section class="section3">
 <div class="container file-upload" align="center">
   <input name="qr_base" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
-  <input name="qr_add" type="text" style="width:1200px;" value="https://intunknown.tistory.com/">
+  <!-- Actual search box -->
+ <div class="form-group has-search">
+   <span class="fa fa-search form-control-feedback"></span>
+   <input name="qr_add" name="검색창" class="form-control" type="text" style="width:65%;" placeholder="https://intunknown.tistory.com/" value="">
+
+ </div>
+
   <button class="file-upload-btn" type="button" onclick="action_qrcode()">QR코드 생성</button>
 
   <div class="image-upload-wrap">
 
-      <img name="qr_img" class="mt-5 pt-5 file-upload-image" src="image/qr.png" alt="your image" />
+      <img style="max-width:250px; max-height:250px;width:100%; height:100%;" name="qr_img"  onclick="download();"class="pt-5 file-upload-image" src="image/qr.png" alt="your image" />
     </br>
 </br>
   </div>
@@ -74,6 +81,24 @@
 
     }
 </script>
+</section>
+<section class="container section4">
+  <!-- 라이브리 시티 설치 코드 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80NTc2OC8yMjI3OQ==">
+    	<script type="text/javascript">
+       (function(d, s) {
+           var j, e = d.getElementsByTagName(s)[0];
+           if (typeof LivereTower === 'function') { return; }
+           j = d.createElement(s);
+           j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+           j.async = true;
+           e.parentNode.insertBefore(j, e);
+       })(document, 'script');
+    	</script>
+    <noscript> 라이브리 댓글 작성을 위해 JavaScript를 활성화 해주세요</noscript>
+    </div>
+    <!-- 시티 설치 코드 끝 -->
+</section>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
