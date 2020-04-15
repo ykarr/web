@@ -8,6 +8,7 @@
     font-size: 2rem;
   }
 }
+
 .file-upload {
   margin: 0 auto;
   padding: 4% 0;
@@ -15,6 +16,7 @@
   border-radius:10px;
   border:solid 1.5px #35465d;
   background-color: #f6f7fa;
+  max-height: 800px;
 }
 
 body {
@@ -77,6 +79,7 @@ body {
   margin-bottom: 30%;
   width:65%;
   height:50vw;
+  max-height: 400px;
 }
 
 .image-dropping,
