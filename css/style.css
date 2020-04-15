@@ -13,7 +13,7 @@
   padding: 4% 0;
   height:70vw;
   border-radius:10px;
-  border:solid 1.5px #f6f7fa;
+  border:solid 1.5px #35465d;
   background-color: #f6f7fa;
 }
 
@@ -72,7 +72,7 @@ body {
   position: relative;
   object-fit:contain;
   border-radius:10px;
-  border:dashed 1.5px #ffffff;
+  border:dashed 1.5px #35465d;
   background-color:#ffffff;
   margin-bottom: 30%;
   width:65%;
@@ -82,7 +82,7 @@ body {
 .image-dropping,
 .image-upload-wrap:hover {
   background-color: #ffffff;
-  border: 1.5px dashed #ffffff;
+  border: 1.5px dashed #35465d;
 }
 
 .image-title-wrap {
