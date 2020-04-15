@@ -16,9 +16,7 @@
       <script>
           var img;
           function action_qrcode() {
-
             qr_img.src= document.all.qr_base.value + document.all.qr_add.value;
-            
           }
           function download() {
             local.href=img;
@@ -64,14 +62,13 @@
   </section>
 <div class="container file-upload" align="center">
   <input name="qr_base" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
-  <input name="qr_add" type="text" style="width:100%;" value="https://intunknown.tistory.com/">
+  <input name="qr_add" type="text" style="width:2080px;" value="https://intunknown.tistory.com/">
   <button class="file-upload-btn" type="button" onclick="action_qrcode()">QR코드 생성</button>
 
   <div class="image-upload-wrap">
 
-      <img name="qr_img" style="width:100%;" class="mt-5 pt-5 file-upload-image" src="image/qr.png" alt="your image" />
+      <img style="max-width:250px; max-height:250px;width:100%; height:100%;" name="qr_img"  class="pt-5 file-upload-image" src="image/qr.png" alt="your image" />
     </br>
-
   </div>
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
