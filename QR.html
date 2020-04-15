@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>QR코드 생성기</title>
+    <title>Hello, world!</title>
     <!--css-->
     <link rel="stylesheet" href="css/style.css">
 
@@ -17,7 +17,7 @@
 <body>
   <!--nav-->
   <nav class="navbar navbar-expand-lg navbar-light nav-distance">
-    <a class="navbar-brand" href="#">Q Code</a>
+    <a class="navbar-brand" href="#">Qr Code</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +41,7 @@
   <!--nav끝-->
   <!--Section1-->
   <section class="section1">
-    <h1 class="title">QR코드 생성기</h1><br/>
+    <h1 class="title">Qr코드 생성기</h1><br/>
     <h2 class="subtitle">무엇이든 QR코드로 만들어드립니다.</h2>
   </section>
   <!--Section2-->
@@ -53,11 +53,12 @@
   </section>
   <section class="section3">
 <div class="container file-upload" align="center">
-  <input name="qr_base" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
+
   <!-- Actual search box -->
  <div class="form-group has-search">
+   <input name="qr_base"id="t1" type="hidden" value="http://chart.apis.google.com/chart?cht=qr&chs=100x100&choe=UTF-8&chld=H|0&chl=">
    <span class="fa fa-search form-control-feedback"></span>
-   <input name="qr_add" name="검색창" class="form-control" type="text" style="width:65%;" placeholder="https://intunknown.tistory.com/" value="">
+   <input name="qr_add" id="t2" name="검색창" class="form-control" type="text" style="width:65%;" placeholder="https://intunknown.tistory.com/" value="">
 
  </div>
 
@@ -67,6 +68,7 @@
 
       <img style="max-width:250px; max-height:250px;width:100%; height:100%;" name="qr_img"  onclick="download();"class="pt-5 file-upload-image" src="image/qr.png" alt="your image" />
     </br>
+    <a id="dn" href="#" download="qr.png">link</a>
 </br>
   </div>
 </div>
@@ -75,11 +77,11 @@
     var img;
     function action_qrcode() {
       qr_img.src= document.all.qr_base.value + document.all.qr_add.value;
-      aasd.href=document.all.qr_base.value + document.all.qr_add.value;
+      document.getElementById("dn").href=document.getElementById("t1").value+document.getElementById("t2").value;
     }
-    function download() {
-
-    }
+    // function download() {
+    //
+    // }
 </script>
 </section>
 <section class="container section4">
