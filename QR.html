@@ -77,7 +77,7 @@
     var img;
     function action_qrcode() {
       img = document.getElementById("t1").value + document.getElementById("t2").value;
-      qr_img.src = img;
+      qr_img.src = document.getElementById("t1").value + document.getElementById("t2").value;
       toDataURL(img, function(dataUrl) {
         //console.log('RESULT:', dataUrl)
         document.getElementById("dn").href=dataUrl;
