@@ -76,12 +76,26 @@
 <script>
     var img;
     function action_qrcode() {
-      qr_img.src= document.all.qr_base.value + document.all.qr_add.value;
-      document.getElementById("dn").href=document.getElementById("t1").value+document.getElementById("t2").value;
+      img = document.getElementById("t1").value + document.getElementById("t2").value;
+      qr_img.src = img;
+      toDataURL(img, function(dataUrl) {
+        //console.log('RESULT:', dataUrl)
+        document.getElementById("dn").href=dataUrl;
+      })
     }
-    // function download() {
-    //
-    // }
+    function toDataURL(url, callback) {
+      var xhr = new XMLHttpRequest();
+      xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+          callback(reader.result);
+        }
+        reader.readAsDataURL(xhr.response);
+      };
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+    }
 </script>
 </section>
 <section class="container section4">
